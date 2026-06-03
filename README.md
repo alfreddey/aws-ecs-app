@@ -5,7 +5,7 @@ A minimal Spring Boot 3 (Java 21) web app that renders a page with:
 - **Full name:** Alfred Dey
 - **Lab name:** AWS ECS Lab
 
-Built for deploying a container to Amazon ECS.
+Built for deploying a container to Amazon ECS
 
 ## Tech stack
 
@@ -22,7 +22,7 @@ mvn clean package && java -jar target/ecs-lab-0.0.1-SNAPSHOT.jar
 ```
 
 Then open http://localhost:8080/
-
+`
 Health endpoint (used by ECS / ALB): http://localhost:8080/actuator/health
 
 ## Build & run with Docker
