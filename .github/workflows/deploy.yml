@@ -39,16 +39,12 @@ jobs:
       - name: Build, tag, and push image to ECR
         env:
           REGISTRY: ${{ steps.ecr-login.outputs.registry }}
-          REPOSITORY: ${{ vars.ECR_REPOSITORY }}
-          IMAGE_TAG: ${{ github.sha }}
+          REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
         run: |
           set -euo pipefail
-          docker build -t "$REGISTRY/$REPOSITORY:$IMAGE_TAG" .
-          docker tag "$REGISTRY/$REPOSITORY:$IMAGE_TAG" "$REGISTRY/$REPOSITORY:latest"
-          docker push "$REGISTRY/$REPOSITORY:$IMAGE_TAG"
+          docker build -t "$REGISTRY/$REPOSITORY:latest" .
           docker push "$REGISTRY/$REPOSITORY:latest"
 
-          echo "Pushed $REGISTRY/$REPOSITORY:$IMAGE_TAG and :latest"
           echo "ECR push of :latest will trigger CodePipeline via EventBridge."
 
       - name: Deployment triggered
