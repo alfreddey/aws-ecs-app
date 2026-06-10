@@ -19,7 +19,7 @@ class HomeControllerTest {
     void homePageShowsNameAndLab() throws Exception {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
-                .andExpect(content().string(org.hamcrest.Matchers.containsString("Alfred Nelly Dey")))
-                .andExpect(content().string(org.hamcrest.Matchers.containsString("AWS ECS Lab")));
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Alfred Dey")))
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("AWS ECS Lab V2")));
     }
 }
