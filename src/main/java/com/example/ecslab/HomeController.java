@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     private static final String FULL_NAME = "Alfred Nelly Dey";
-    private static final String LAB_NAME = "AWS ECS Lab V0";
+    private static final String LAB_NAME = "AWS ECS Lab V1";
 
     @GetMapping("/")
     public String home(Model model) {
